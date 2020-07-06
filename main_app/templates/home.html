@@ -9,4 +9,21 @@
 <p>this is some content</p>
 <hr>
 <h2>Join the x-games family</h2>
+
+<form method="POST">
+  {% csrf_token %}
+  {% for field in sub_form %}
+    <p>
+      {{ field.label_tag }}<br>
+      {{ field }}
+      {% if field.help_text %}
+        <small style="color: grey">{{ field.help_text }}</small>
+      {% endif %}
+      {% for error in field.errors %}
+        <p style="color: red">{{ error }}</p>
+      {% endfor %}
+    </p>
+  {% endfor %}
+  <button type="submit">Sign up</button>
+</form>
 {% endblock %}

@@ -16,5 +16,7 @@ def home(request):
   context = {'sub_form': sub_form}
   return render(request, 'home.html', context)
 
-def info(request):
-  return render(request, 'info.html')
+def dashboard(request):
+  subs = Subscriber.objects.all()
+  context = {"subs": subs}
+  return render(request, 'dashboard.html', context)

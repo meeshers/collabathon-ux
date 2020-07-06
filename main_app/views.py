@@ -1,9 +1,20 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from .models import Subscriber
+from .forms import Subscriber_Form
+
 # Create your views here.
 def home(request):
-  return render(request, 'home.html')
+  if request.method == 'POST':
+    sub_form = Subscriber_Form(request.POST)
+    if sub_form.is_valid():
+      new_sub = sub_form.save()
+  else:
+    sub_form = Subscriber_Form()
+
+  context = {'sub_form': sub_form}
+  return render(request, 'home.html', context)
 
 def info(request):
   return render(request, 'info.html')

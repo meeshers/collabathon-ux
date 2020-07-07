@@ -60,11 +60,11 @@ body {
 
 .social {
   padding-top: 10px;
-  font-size: 45px;
+  font-size: 30px;
 }
 
 .social span {
-  padding: 10px;
+  padding: 5px;
 }
 
 .top img {
@@ -98,6 +98,9 @@ body {
 
 .subscribe {
   position: relative;
+  border-top: 2px solid #AAAAAA;
+  padding-top: 30px;
+  margin-bottom: 35px;
 }
 
 section img {
@@ -107,8 +110,87 @@ section img {
 
 .recent, .coming-soon {
   padding: 10px;
+  margin-bottom: 15px;
 }
 
 .recent img, .coming-soon img {
   margin: 5px;
+}
+
+.modal-header {
+  padding: 10px;
+  border: none;
+  margin: 10px;
+}
+
+.modal-content {
+  color: #1f1f1f;
+  background-color: #EFEFEF;
+  font-size: 18px;
+  text-align: center;
+}
+
+.modal-header img {
+  width: 144px;
+  height: 46px;
+  position: absolute;
+  top: 10%;
+  left: 35%;
+}
+
+@media screen and (max-width:480px) {
+  position: absolute;
+  top: 10%;
+  left: 35%;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.close {
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.welcome {
+  font-size: 24px;
+}
+
+.panel-heading .fa-plus {
+  display: inline-block;
+  position: relative;
+}
+
+.panel-heading {
+  padding: 15px;
+  margin: 10px;
+}
+
+.normal {
+  font-size: 11px;
+}
+
+footer {
+  padding-top: 20px;
+  border-top: 2px solid #AAAAAA;
+  display: flex;
+  margin: 10px;
+  align-self: center;
+  justify-content: space-evenly;
+  
+}
+
+.resources .company .social {
+  width: 60px;
+}
+
+.list {
+  list-style-type: none;
+  text-align: left;
+}
+
+footer img {
+  width: 63px;
+  height: 66px;
 }

@@ -11,17 +11,18 @@
     <img src="{% static 'images/logo_dark.png' %}" alt="dark logo" />
     <i class="fa fa-bars" aria-hidden="true"></i>
   </div>
-  <div class='locations'>
-    <a href="">Aspen</a>
-    <a href="">Minneapolis</a>
-    <a href="">China</a>
-    <a href="">Norway</a>
-  </div>
 </nav>
+
+<div class='locations'>
+  <a href="">Aspen</a>
+  <a href="">Minneapolis</a>
+  <a href="">China</a>
+  <a href="">Norway</a>
+</div>
 
 <section>
   <div class="recent">
-    <h5><b>MOST RECENT</b></h5>
+    <h5><b>TOP STORIES</b></h5>
     <img src="{% static 'images/game_cancelled.jpg' %}" alt="2020 games cancelled" />
     <img src="{% static 'images/brando_world.png' %}" alt="brando's world" />
     <img src="{% static 'images/destinations.png' %}" alt="x games destinations" />
@@ -35,7 +36,7 @@
   </div>
 </section>
 
-<hr>
+
 <div class="subscribe">
   <h2>Join the X-games Family</h2>
   <p>Sign up for our newsletter to receive latest news, updates on events, exclusive access to LIVESTREAM COMPETITIONS,
@@ -54,13 +55,51 @@
     {% endfor %}
     </p>
     {% endfor %}
-    <button type="submit" class="btn btn-danger">SIGN UP</button>
+    <a type="submit" class="btn btn-danger" data-toggle="modal" data-target="#thank-you">SIGN UP</a>
   </form>
+</div>
 
+<!-- Modal -->
+<div class="modal fade" id="thank-you" tabindex="-1" role="dialog" aria-labelledby="thank-modal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img class="modal-title" id="thank-modal" src="{% static 'images/logo_light.png' %}" alt="light logo" />
+        <a type="button" class="close" data-dismiss="modal" aria-label="Close" href="{% url 'home' %}">
+          <a class="close" href="{% url 'home' %}"><i class="fa fa-times" aria-hidden="true"></i></a>
+        </a>
+      </div>
+      <div class="modal-body">
+        <p class="welcome"><b>Thanks, and WELCOME to the X-Games FAM!</b></p>
+        <p><b>You'll receive an email from us shortly to confirm your email address.</b></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div><img src="{% static 'images/logo_dark.png' %}" alt="dark logo" /></div>
+  <div class="resources">
+    <p class="normal">Resources</p>
+    <ul class="list">
+      <li><a href="">Help Center</a></li>
+      <li><a href="">Newsletter</a></li>
+      <li><a href="">Blogs</a></li>
+    </ul>
+  </div>
+  <div class="company">
+    <p class="normal">Company</p>
+    <ul class="list">
+      <li><a href="">About</a></li>
+      <li><a href="">Jobs</a></li>
+    </ul>
+  </div>
   <div class="social">
+    <p class="normal">Follow Us</p>
     <span><i class="fa fa-facebook-square" aria-hidden="true"></i></span>
     <span><i class="fa fa-instagram" aria-hidden="true"></i></span>
     <span><i class="fa fa-twitter-square" aria-hidden="true"></i></span>
   </div>
-</div>
+</footer>
+
 {% endblock %}

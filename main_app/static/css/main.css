@@ -5,6 +5,58 @@ body {
 }
 
 .panel-group {
-  background-color: blue;
+  background-color: rgb(51, 134, 167);
   border-radius: 5px;
+}
+
+.panel-group a {
+  color: white;
+  text-decoration: none;
+}
+
+.table {
+  color: white;
+}
+
+.table-body {
+  color: rgb(206, 206, 206);
+}
+
+.first_name {
+  display: inline;
+}
+
+#id_first_name {
+  width: 146px;
+}
+
+.last_name {
+  display: inline;
+  padding-left: 4px;
+}
+
+#id_last_name {
+  width: 146px;
+}
+
+.email {
+  padding-top: 6px;
+}
+
+#id_email {
+  width: 300px;
+}
+
+.btn-danger {
+  background-color: red;
+  width: 300px;
+}
+
+.social {
+  padding-top: 10px;
+  font-size: 45px;
+}
+
+.social span {
+  padding: 10px;
 }

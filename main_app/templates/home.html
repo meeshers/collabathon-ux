@@ -1,36 +1,66 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
 <title>Home</title>
 {% endblock %}
 
 {% block content %}
-<h1>home page</h1>
-<p>this is some content</p>
-<hr>
-<h2>Join the X-games Family</h2>
-<p>Sign up for our newsletter to receive latest news, updates on events, exclusive access to LIVESTREAM COMPETITIONS,
-  and more! No Spam.</p>
-<form method="POST">
-  {% csrf_token %}
-  {% for field in sub_form %}
-  <p class='{{ field.name }}'>
-    <!--   {{ field.label_tag }} -->
-    {{ field }}
-    {% if field.help_text %}
-    <small style="color: grey">{{ field.help_text }}</small>
-    {% endif %}
-    {% for error in field.errors %}
-  <p style="color: red">{{ error }}</p>
-  {% endfor %}
-  </p>
-  {% endfor %}
-  <button type="submit" class="btn btn-danger">SIGN UP</button>
-</form>
+<nav>
+  <div class='top'>
+    <img src="{% static 'images/logo_dark.png' %}" alt="dark logo" />
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+  <div class='locations'>
+    <a href="">Aspen</a>
+    <a href="">Minneapolis</a>
+    <a href="">China</a>
+    <a href="">Norway</a>
+  </div>
+</nav>
 
-<div class="social">
-  <span><i class="fa fa-facebook-square" aria-hidden="true"></i></span>
-  <span><i class="fa fa-instagram" aria-hidden="true"></i></span>
-  <span><i class="fa fa-twitter-square" aria-hidden="true"></i></span>
+<section>
+  <div class="recent">
+    <h5><b>MOST RECENT</b></h5>
+    <img src="{% static 'images/game_cancelled.jpg' %}" alt="2020 games cancelled" />
+    <img src="{% static 'images/brando_world.png' %}" alt="brando's world" />
+    <img src="{% static 'images/destinations.png' %}" alt="x games destinations" />
+  </div>
+
+  <div class="coming-soon">
+    <h5><b>COMING SOON</b></h5>
+    <img src="{% static 'images/all_in.png' %}" alt="x games join all in challenge" />
+    <img src="{% static 'images/paul.png' %}" alt="paul rodriguez" />
+    <img src="{% static 'images/celebs.png' %}" alt="celebs at x games" />
+  </div>
+</section>
+
+<hr>
+<div class="subscribe">
+  <h2>Join the X-games Family</h2>
+  <p>Sign up for our newsletter to receive latest news, updates on events, exclusive access to LIVESTREAM COMPETITIONS,
+    and more! No Spam.</p>
+  <form method="POST">
+    {% csrf_token %}
+    {% for field in sub_form %}
+    <p class='{{ field.name }}'>
+      <!--   {{ field.label_tag }} -->
+      {{ field }}
+      {% if field.help_text %}
+      <small style="color: grey">{{ field.help_text }}</small>
+      {% endif %}
+      {% for error in field.errors %}
+    <p style="color: red">{{ error }}</p>
+    {% endfor %}
+    </p>
+    {% endfor %}
+    <button type="submit" class="btn btn-danger">SIGN UP</button>
+  </form>
+
+  <div class="social">
+    <span><i class="fa fa-facebook-square" aria-hidden="true"></i></span>
+    <span><i class="fa fa-instagram" aria-hidden="true"></i></span>
+    <span><i class="fa fa-twitter-square" aria-hidden="true"></i></span>
+  </div>
 </div>
 {% endblock %}

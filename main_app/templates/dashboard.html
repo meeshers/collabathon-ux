@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
 <title>Dashboard</title>
@@ -11,14 +12,18 @@
 </div>
 
 <div class="container">
+
+  <!-- Subscribers panel -->
   <div class="panel-group">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h5 style="text-align: center;" class="panel-title">
-          <a data-toggle="collapse" href="#collapse1">Subscribers
-            <br>{{ subs.count }}
+          <a data-toggle="collapse" href="#collapse1">
+            <div>Subscribers
+              <br>{{ subs.count }}
+            </div>
+            <i class="fa fa-plus" aria-hidden="true"></i>
           </a>
-
         </h5>
       </div>
       <div id="collapse1" class="panel-collapse collapse">
@@ -43,14 +48,148 @@
               {% endfor %}
             </tbody>
           </table>
-
         </div>
-
       </div>
     </div>
   </div>
 
+  <!-- Monthly Visitors -->
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h5 style="text-align: center;" class="panel-title">
+          <a data-toggle="collapse" href="#collapse2">
+            <div>Monthly Visitors
+              <br>12,345</div>
+          </a>
 
+        </h5>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Date joined</th>
+              </tr>
+            </thead>
+
+            <tbody class="table-body">
+              {% for sub in subs %}
+              <tr>
+                <td>{{ sub.first_name}} {{sub.last_name }}</td>
+                <td>{{ sub.email}} </td>
+                <td>{{ sub.date }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Monthly Users -->
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h5 style="text-align: center;" class="panel-title">
+          <a data-toggle="collapse" href="#collapse3">
+            <div>Monthly Users
+              <br>{{ subs.count }}</div>
+          </a>
+        </h5>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Date joined</th>
+              </tr>
+            </thead>
+
+            <tbody class="table-body">
+              {% for sub in subs %}
+              <tr>
+                <td>{{ sub.first_name}} {{sub.last_name }}</td>
+                <td>{{ sub.email}} </td>
+                <td>{{ sub.date }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Overall Rating -->
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h5 style="text-align: center;" class="panel-title">
+        <a data-toggle="collapse" href="#collapse4">
+          <div>Overall Rating</div>
+        </a>
+      </h5>
+    </div>
+    <div id="collapse4" class="panel-collapse collapse">
+      <div class="panel-body">
+        Good.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Recent Reviews -->
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h5 style="text-align: center;" class="panel-title">
+        <a data-toggle="collapse" href="#collapse5">
+          <div>Recent Reviews</div>
+        </a>
+      </h5>
+    </div>
+    <div id="collapse5" class="panel-collapse collapse">
+      <div class="panel-body">
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Rating</th>
+              <th>Review</th>
+            </tr>
+          </thead>
+
+          <tbody class="table-body">
+            {% for sub in subs %}
+            <tr>
+              <td>{{ sub.first_name}} {{sub.last_name }}</td>
+              <td>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+              </td>
+              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi similique officia ex eaque. Repellat ipsa quia illo saepe consequatur pariatur modi iure numquam in nostrum earum molestiae quos, nemo odit.</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
 {% endblock %}

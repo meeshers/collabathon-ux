@@ -4,8 +4,14 @@ body {
   text-align: center;
 }
 
+.dashboard {
+  margin: 54px 0 20px 0;
+  border-top: 2px solid #AAAAAA;
+  border-bottom: 2px solid #AAAAAA;
+}
+
 .panel-group {
-  background-color: rgb(51, 134, 167);
+  background-color:#3277AA;
   border-radius: 5px;
 }
 
@@ -59,4 +65,50 @@ body {
 
 .social span {
   padding: 10px;
+}
+
+.top img {
+  position: absolute;
+  height: 60px;
+  width: 67.24px;
+  left: 6px;
+  top: 58px;
+}
+
+.top {
+  margin-top: 54px;
+  color: #AAAAAA;
+  text-align: right;
+  font-size: 50px;
+  border-top: 2px solid #AAAAAA;
+  border-bottom: 2px solid #AAAAAA;
+  padding-right: 15px;
+}
+
+.locations {
+  text-align: left;
+}
+
+.locations a {
+  text-decoration: none;
+  color: #EFEFEF;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.subscribe {
+  position: relative;
+}
+
+section img {
+  width: 380px;
+  height: 207px;
+}
+
+.recent, .coming-soon {
+  padding: 10px;
+}
+
+.recent img, .coming-soon img {
+  margin: 5px;
 }

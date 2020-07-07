@@ -5,43 +5,50 @@
 {% endblock %}
 
 {% block content%}
-
 <div class="container">
-  <h1>X games dashboard</h1>
+  <h1>Dashboard</h1>
+  <hr>
 
-  <div class="accordion" id="accordionExample">
-    <div class="card">
-      <div class="card-header" id="headingOne">
-        <h2 class="mb-0">
-          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-            aria-expanded="true" aria-controls="collapseOne">
-            Details
-          </button>
-        </h2>
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h5 style="text-align: center;" class="panel-title">
+          <a data-toggle="collapse" href="#collapse1" >Subscribers
+            <br>{{ subs.count }}
+          </a>
+            
+        </h5>
       </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body">
 
-      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-        <div class="card-body">
           <table class="table table-striped">
             <thead>
               <tr>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Date joined</th>
               </tr>
             </thead>
-            
-            <tbody>
+
+            <tbody class="table-body">
               {% for sub in subs %}
               <tr>
                 <td>{{ sub.first_name}} {{sub.last_name }}</td>
                 <td>{{ sub.email}} </td>
+                <td>{{ sub.date }}</td>
               </tr>
               {% endfor %}
             </tbody>
           </table>
+
         </div>
+
       </div>
     </div>
-
   </div>
-  {% endblock %}
+
+
+
+</div>
+{% endblock %}
